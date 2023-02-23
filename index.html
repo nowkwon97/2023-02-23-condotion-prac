@@ -14,15 +14,36 @@
     <li>items-4</li>
     <li>items-5</li>
   </ul>
+  <!-- 
+    !주석을 잘 활용하자.
+   -->
   <script>
     // 'menu'는 값과 데이터를 구분하기 위함
+    // getElementById(): id값을 가진 요소를 찾아서 반환
+    // DOM API, HTML을 객체로 해석한 데이터이기 때문에 다양한 속성들과 '함수'를 제공한다.
+    // 개발하기 편하게 여러 기능들을 제공하는 것을 'api'라고한다.
     let menu = window.document.getElementById('menu');
-    // 구조를 확인하는 것이 중요
+    // console.dir를 통해 구조를 확인하는 것이 중요
     console.dir(menu);
-    console.log(menu.children);
+    console.log(menu.children); // 배열
     console.log(menu.children[0]);
     // 검증 완료
+    console.dir(menu.children[0].style);
+    // 반복문 하기 전 짧게 미리 검증하여 적용
+    menu.children[0].style.color = "blue";
     
+    for(let index = 0; index < menu.children.length; index++) {
+      // index ===2 와 같다.
+      // 조건 혹은 제어문은 다양하다.
+      if(menu.children[index].textContent === "items-3") {
+        // 조건문이 참일 때
+        menu.children[index].style.color = "blue";
+      }else {
+        // 조건문이 거짓일 때
+        menu.children[index].style.color = "grey";
+      }
+    } // 중괄호는 영역을 구분하는 역할이다.
+      // 영역을 스코프(scope)라고 한다.
   </script>
 </body>
 </html>
