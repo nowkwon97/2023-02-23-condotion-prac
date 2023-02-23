@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    document.body.style.display = "flex";
+    // id가 root인 값을 가져와서 반환한다.
+    let root = document.getElementById('root');
+    console.log(root);
+    // root의 구조 확인
+    console.dir(root);
+    
+    // createElement를 이용하여 요소를 추가하는 방법 탐구해보자.
+    // div에 width, height backgroundColor 적용해도 안나오는 이유는?
+    // -> 박스를 만들어주고 body에 추가를 안해줘서 그렇다.
+    let divBox = document.createElement('div');
+    console.dir(divBox);
+    divBox.style.width = "100px";
+    divBox.style.height = "100px";
+    divBox.style.backgroundColor = "blue";
+    document.body.appendChild(divBox);
+    
+    for (let i = 0; i < 2; i++) {
+      let coralBox = document.createElement('div');
+      coralBox.style.width = "100px";
+      coralBox.style.height = "100px";
+      coralBox.style.backgroundColor = "coral";
+      document.body.appendChild(coralBox);
+
+      let beigeBox = document.createElement('div');
+      beigeBox.style.width = "100px";
+      beigeBox.style.height = "100px";
+      beigeBox.style.backgroundColor = "beige";
+      document.body.appendChild(beigeBox);
+    }
+    
+  </script>
+</body>
+</html>
